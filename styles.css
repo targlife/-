@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
@@ -9,17 +9,19 @@ body {
     height: 100vh;
 }
 
-#app {
+.container {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 600px;
+    text-align: center;
 }
 
 h1, h2 {
     margin: 0 0 10px;
+    color: #333;
 }
 
 ul {
@@ -31,6 +33,9 @@ ul {
 li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 form {
@@ -43,6 +48,7 @@ input, button {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    width: 100%;
 }
 
 button {
@@ -54,4 +60,18 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.cost-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+}
+
+.total-cost {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    transition: transform 0.3s ease-in-out;
 }
