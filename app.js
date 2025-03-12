@@ -6,16 +6,42 @@ if ('serviceWorker' in navigator) {
 
 const subscriptionsList = document.getElementById('subscriptions');
 const addSubscriptionForm = document.getElementById('add-subscription');
+const totalCostElement = document.getElementById('total-cost');
+
+let totalCost = 0;
+
+function updateTotalCost() {
+    const totalCostElement = document.getElementById('total-cost');
+    const animatedTotalCost = new CountUp(totalCostElement, totalCost, {
+        duration: 1,
+        useEasing: true,
+        useGrouping: true,
+        separator: ' ',
+        decimal: ','
+    });
+    animatedTotalCost.start();
+}
+
+function addSubscription(name, cost) {
+    const subscription = document.createElement('li');
+    subscription.textContent = `${name} - ${cost} рублей`;
+    subscriptionsList.appendChild(subscription);
+
+    totalCost += cost;
+    updateTotalCost();
+}
 
 addSubscriptionForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = document.getElementById('name').value;
     const cost = document.getElementById('cost').value;
 
-    const subscription = document.createElement('li');
-    subscription.textContent = `${name} - ${cost} рублей`;
-    subscriptionsList.appendChild(subscription);
-
-    document.getElementById('name').value = '';
-    document.getElementById('cost').value = '';
+    if (name && cost) {
+        addSubscription(name, parseFloat(cost));
+        document.getElementById('name').value = '';
+        document.getElementById('cost').value = '';
+    }
 });
+
+// Инициализация калькуляции затрат
+updateTotalCost();
