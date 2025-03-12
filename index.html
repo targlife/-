@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Subscription Tracker</h1>
+    <div id="app">
+        <h2>Subscriptions</h2>
+        <ul id="subscriptions"></ul>
+        <form id="add-subscription">
+            <input type="text" id="name" placeholder="Name">
+            <input type="number" id="cost" placeholder="Cost">
+            <button type="submit">Add Subscription</button>
+        </form>
+    </div>
+</body>
+</html>
+<script type="application/json" id="manifest-json">
+{
+    "name": "Subscription Tracker",
+    "short_name": "Tracker",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "https://via.placeholder.com/192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://via.placeholder.com/512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
+</script>
 
