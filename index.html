@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscription Tracker</title>
+    <title>Трекер Подписок</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>Subscription Tracker</h1>
-    <div id="app">
-        <h2>Subscriptions</h2>
-        <ul id="subscriptions"></ul>
-        <form id="add-subscription">
-            <input type="text" id="name" placeholder="Name">
-            <input type="number" id="cost" placeholder="Cost">
-            <button type="submit">Add Subscription</button>
-        </form>
+    <div class="container">
+        <h1>Трекер Подписок</h1>
+        <div id="app">
+            <h2>Список Подписок</h2>
+            <ul id="subscriptions"></ul>
+            <form id="add-subscription">
+                <input type="text" id="name" placeholder="Название подписки">
+                <input type="number" id="cost" placeholder="Стоимость">
+                <button type="submit">Добавить Подписку</button>
+            </form>
+            <div class="cost-container">
+                <h2>Затраты в месяц</h2>
+                <div id="total-cost" class="total-cost">0 рублей</div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
