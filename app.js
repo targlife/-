@@ -11,13 +11,11 @@ const totalCostElement = document.getElementById('total-cost');
 let totalCost = 0;
 
 function updateTotalCost() {
-    const totalCostElement = document.getElementById('total-cost');
     const animatedTotalCost = new CountUp(totalCostElement, totalCost, {
         duration: 1,
         useEasing: true,
-        useGrouping: true,
-        separator: ' ',
-        decimal: ','
+        decimal: ',',
+        separator: ' '
     });
     animatedTotalCost.start();
 }
